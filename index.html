@@ -1,9 +1,86 @@
 <!DOCTYPE html>
+<html lang = "en">
     <head>
-        <title>ello</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+           
+            body {
+                background-color:ghostwhite;
+                margin:0;
+                margin-top: 0;
+            }
+            .header {
+                background-image: url(bg.jpg);
+                text-align:center;
+                padding: 20x;
+                color:white;
+                height: 100px;
+                font-size:30px
+            }
+          
+            .topnav {
+                overflow: hidden;
+                background-color:rgb(29, 23, 23)
+            }
+            .topnav button{
+                float:left;
+                text-decoration:none;
+                background-color:rgb(29, 23, 23);
+                color:whitesmoke;
+                text-align: center;
+                padding: 14px 16px;
+                font-size:20px;
+                cursor:pointer;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+                margin:0%;
+                border:0px;
+
+                
+            }
+            .topnav button:hover{
+                background-color:rgb(151, 151, 151);
+                color:black;
+            }
+            .topic img{
+                flex: 50%;
+
+            }
+            .row {
+                display:flex;
+                margin-left:auto;
+                margin-right:auto;
+            }
+           
+        </style>
+        <title>Saksham</title>
     </head>
     <body>
-        <img src="bg.jpg" alt="Girl in a jacket" width="500" height="600">
-        <p><b><i>My name is saksham Kumar</i></b></p>
+        <div class = "header">
+            <h1 >Program With Saksham</h1>
+        </div>
+
+        <div class = "topnav">
+            <button type="button" onclick = "document.location='index.html'">Home</button>
+            <button type="button">Tutorials</button>
+            <button type="button">Projects</button>
+        </div>
+
+        <p style="font-size:60px"> </p>
+        <h1 style="text-align:center;font-family: insignia;font-size:35px">Learn To Code, Cause you CAN!</h1>
+
+        <div class = "row">
+            <div class = "topic">
+                <p style="float:left; font-size:50"> </p>
+                <img src="computer.png" alt = 'Computer Science' height="200px" width="220px">
+            </div>
+            <div class = "topic">
+                <img src="gaming.jpg" alt = 'Gaming' height = "200px" width = "220px">
+            </div>
+        </div>
+        
+        
     </body>
 </html>
+
+

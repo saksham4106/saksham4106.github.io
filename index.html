@@ -21,7 +21,7 @@
         </div>
 
         <div class = "topnav">
-            <button type="button" onclick = "document.location='index.html'">Home</button>
+            <button type="button" onclick = "test()">Home</button>
             <button type="button">Projects</button>
         </div>
 
@@ -38,13 +38,11 @@
         </div>
         
         <script>
-            window.onLoad = function(){
+            function test(){
                     let params = (new URL(window.location.href)).searchParams;
                     console.log(params + " " + params.get('name'));
                     document.getElementById('test').innerHTML = params.get('name');
-                    
             }
-
         </script>
 
     </body>

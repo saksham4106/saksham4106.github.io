@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Display Text</title>
+        <meta content="#67FF4F" data-react-helmet="true" name="theme-color">
+        <link rel="stylesheet" href="index.css">
+    </head>
+
+    <body>
+        <p style="font-size: 50px; color: white;" id = "data"></p>
+
+        <script>
+            window.onload = function(){
+                let params = (new URL(window.location.href)).searchParams;
+                document.getElementById('data').textContent = params.get('text');
+
+            }
+        </script>
+    </body>
+</html>

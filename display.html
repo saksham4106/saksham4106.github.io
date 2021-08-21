@@ -8,12 +8,19 @@
 
     <body>
         <p style="font-size: 50px; color: white;" id = "data"></p>
+        <img width="500" height="600" id = "img">
 
         <script>
             window.onload = function(){
                 let params = (new URL(window.location.href)).searchParams;
                 document.getElementById('data').textContent = params.get('text');
 
+                if(params.get("img") === null){
+                    document.getElementById('img').style.visibility = 'hidden';
+                }else{
+                    document.getElementById('img').style.visibility = 'visibility';
+                    document.getElementById('img').src = params.get("img");
+                }
             }
         </script>
     </body>

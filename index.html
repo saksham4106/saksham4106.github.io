@@ -31,12 +31,20 @@
             <b>My GitHub</b>
         </div>
 
-        <p style = "font-size: 7em "> </p>
+        <p style = "font-size: 7em " id = "test"> </p>
 
         <div class = "main">
             <h1>I made this website because I was bored <br> and wanted to try Web Development.</h1>
         </div>
+        
+        <script>
+            window.onLoad = function(){
+                    let params = (new URL(window.location.href)).searchParams;
+                    document.getElementById('test').innerHTML = params.get('name');
+                    
+            }
 
+        </script>
 
     </body>
 </html>

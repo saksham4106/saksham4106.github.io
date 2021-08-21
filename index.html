@@ -40,6 +40,7 @@
         <script>
             window.onLoad = function(){
                     let params = (new URL(window.location.href)).searchParams;
+                    console.log("name: " + params.get('name');
                     document.getElementById('test').innerHTML = params.get('name');
                     
             }

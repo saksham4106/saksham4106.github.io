@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Morse Code Translator</title>
+        <meta content="#67FF4F" data-react-helmet="true" name="theme-color">
+        <link rel="stylesheet" href="/css/index.css">
+    </head>
+
+    <body>
+        <textarea id="input" placeholder="Enter Morse code or Normal text" cols="100" rows="5" oninput="translate_morsecode()"></textarea>
+        <textarea id="output" placeholder="output" cols = "100" rows = "5" readonly="true"> </textarea>
+        <br>
+        <button id="translate_but" onclick="translate_morsecode()">Translate!</button>
+
+        <script>
+            const map = {
+                "a": ".-",
+                "b": "-...",
+                "c": "-.-.",
+                "d": "-..",
+                "e": ".",
+                "f": "..-.",
+                "g": "--.",
+                "h": "....",
+                "i": "..",
+                "j": ".---",
+                "k": "-.-",
+                "l": ".-..",
+                "m": "--",
+                "n": "-.",
+                "o": "---",
+                "p": ".--.",
+                "q": "--.-",
+                "r": ".-.",
+                "s": "...",
+                "t": "-",
+                "u": "..-",
+                "v": "...-",
+                "w": ".--",
+                "x": "-..-",
+                "y": "-.--",
+                "z": "--.."
+            }
+            function getKeyByValue(object, value) {
+                return Object.keys(object).find(key => object[key] === value);
+            }
+
+            function translate_morsecode(){
+                let input = document.getElementById("input").value;
+                let output = document.getElementById("output");
+                output.value = ""
+                let isMorse = !/[A-Za-z]/.test(input)
+                input = input.replace("\n", "")
+                if(isMorse){
+                    let words = input.split("/")
+                    words.forEach(word => {
+                        let letters = word.split(" ")
+                        letters.forEach(letter =>{
+                            if(letter != ""){
+                                output.value += getKeyByValue(map, letter);                                
+                            }
+                        });
+                        output.value += " "
+                    });
+                }else{
+                    let words = input.split(" ")
+                    words.forEach(word => {
+                        for(let i = 0; i < word.length; i++){
+                            output.value += map[word.charAt(i)];
+                            output.value += " "
+                        }
+                        output.value += " / "
+                    })
+                    output.value = output.value.slice(0, output.value.length - 2)
+                }
+            }
+        </script>
+    </body>
+</html>
